@@ -3,13 +3,19 @@ import store from './store';
 
 // views
 import Home from './views/Home.vue';
+import About from './views/About.vue';
+import Contact from './views/Contact.vue';
+import Portfolio from './portfolio/Landing.vue';
+import PortfolioProject from './portfolio/Project.vue';
+
 import FourOhFour from './views/FourOhFour.vue';
 
 
 // create router instance
 let router = new VueRouter({
-
+    mode: "history",
     linkActiveClass: 'is-active',
+
     routes: [
 
       // eg requiring auth below
@@ -23,12 +29,40 @@ let router = new VueRouter({
 
         {
             path: '/',
-            component: Home
+            component: Home,
+            children: [
+              {
+                // will be rendered within the homevue using <router-view>
+                path: "/about",
+                component: About
+              },
+              {
+                path: "/portfolio",
+                component: Portfolio,
+                children: [
+                  {
+                    path: "polkadot-tiger",
+                    name: "pdt",
+                    component: PortfolioProject
+                  },
+                  {
+                    path: "the-content-bible",
+                    name: "thecontentbible",
+                    component: PortfolioProject
+                  }
+                ]
+              },
+              {
+                path: "/contact",
+                component: Contact
+              }
+            ]
         },
 
 
         {
             path: '*',
+            name: "404",
             component: FourOhFour
         }
     ]
