@@ -1,7 +1,7 @@
 <template>
   <div
   @click="preventDefault"
-  class="panel panel--level1 bg-dark bg-darkBlue mx-auto h-full flex flex-col justify-center items-center">
+  class="panel panel--level1 bg-dark bg-darkBlue mx-auto h-full flex flex-row justify-center items-center">
     <back-button />
 
     <div class="panel__content">

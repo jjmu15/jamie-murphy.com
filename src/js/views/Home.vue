@@ -1,5 +1,5 @@
 <template>
-  <div :class="homeClasses" @click="goHome">
+  <div :class="homeClasses" @click="goHome" v-touch:swipe.right="goBack">
 
     <div :class="logoClasses">
       <router-link class="link" to="/" @click="goHome">
@@ -113,6 +113,11 @@
           this.$store.commit('toggleHomeHidden');
           this.$router.push('/');
         }
+      },
+
+      goBack() {
+        this.$store.commit('toggleHomeHidden');
+        this.$router.go('/');
       }
     }
   };

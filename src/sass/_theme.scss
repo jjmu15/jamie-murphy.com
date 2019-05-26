@@ -13,6 +13,10 @@
   @apply inline-block;
   @apply align-middle;
 
+  &.panel--no-padding {
+    padding: 0 !important;
+  }
+
   &.panel--clickable {
     cursor: pointer;
   }
@@ -24,6 +28,7 @@
 
   &.panel--level2 {
     z-index: 20;
+    left: 10%;
   }
 
   &.panel--level3 {
