@@ -1,8 +1,8 @@
 <template>
   <div
-  @click="preventDefault"
-  class="panel panel--level1 panel--no-padding bg-dark bg-darkBlue mx-auto h-full ">
-    <back-button />
+  @click="goToLayer1"
+  :class="layer1Classes">
+    <back-button v-if="!layer1.isHidden" />
 
     <div class="portfolio-list flex flex-col">
       <div class="portfolio-list__item flex items-end pb-5" @click="goPDT">
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import BackButton from '../components/BackButton.vue';
 
   export default {
@@ -30,18 +31,43 @@
       BackButton
     },
 
+    computed: {
+      layer1Classes() {
+        return {
+          'panel': true,
+          'panel--level1': true,
+          'panel--no-padding': true,
+          'bg-dark': true,
+          'bg-darkBlue' : true,
+          'mx-auto': true,
+          'h-full': true,
+          'panel--clickable': this.layer1.isHidden
+        }
+      },
+
+      ...mapState(['home', 'layer1'])
+    },
+
     methods: {
-      preventDefault(event) {
+      goToLayer1(event) {
+        console.log('yo');
         event.stopPropagation();
+
+        if(this.layer1.isHidden) {
+          this.$store.commit('toggleLayer1');
+          this.$router.push('/portfolio');
+        }
       },
 
       goContentBible() {
-        console.log('yo');
+        event.stopPropagation();
+        this.$store.commit('toggleLayer1');
         this.$router.push({name: "thecontentbible"});
       },
 
       goPDT() {
-        console.log('yo');
+        event.stopPropagation();
+        this.$store.commit('toggleLayer1');
         this.$router.push({name: "pdt"});
       }
     }

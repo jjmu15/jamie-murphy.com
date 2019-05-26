@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapState } from 'vuex';
   import SocialBlock from '../components/SocialBlock.vue';
 
   export default {

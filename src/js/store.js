@@ -18,7 +18,7 @@ let store = new Vuex.Store({
         state.home.isHidden = !state.home.isHidden;
       },
       toggleLayer1(state) {
-        state.later1.isHidden = !state.layer1.isHidden;
+        state.layer1.isHidden = !state.layer1.isHidden;
       }
     },
 
