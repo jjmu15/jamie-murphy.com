@@ -4,6 +4,7 @@
 
 .panel {
   position: absolute;
+  cursor: default;
   top: 0;
   right: 0;
   overflow: auto;
@@ -12,9 +13,13 @@
   @apply inline-block;
   @apply align-middle;
 
+  &.panel--clickable {
+    cursor: pointer;
+  }
+
   &.panel--level1 {
     z-index: 10;
-    left: 10%;
+    left: 5%;
   }
 
   &.panel--level2 {
@@ -32,12 +37,13 @@
   .panel__content {
     margin: 0 auto;
     max-width: 700px;
-    max-height:  70vh;
+    max-height:  75vh;
     overflow: auto;
 
     a {
       padding-bottom: 2px;
     }
+
   }
 }
 
@@ -46,4 +52,8 @@
   position: absolute;
   top: 2.5%;
   left: 2.5%;
+
+  i {
+    font-size: 20px;
+  }
 }

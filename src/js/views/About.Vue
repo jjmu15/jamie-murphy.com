@@ -7,7 +7,7 @@
     <div class="panel__content">
       <h1 class="h1">Hi there, I'm Jamie.</h1>
 
-      <p class="lead-paragraph text-2xl mb-4">I'm an experienced full-stack developer turned <strong>entrepreneur</strong>, self funding my own products and services mainly in Laravel and Vuejs. </p>
+      <p class="lead-paragraph text-2xl mb-4">I'm an experienced full-stack developer turned <strong>entrepreneur</strong>, self funding my own products and services built mainly in Laravel and Vuejs. </p>
 
       <p class="mb-4">I've over 8 years professional experience working for UK based agencies and early spring in 2019, I left my job as Technical Director of a UK agency working with Glenfiddich Whisky and Hendricks Gin to self fund time building products and services.</p>
 

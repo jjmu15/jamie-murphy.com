@@ -1,5 +1,5 @@
 <template>
-  <div class="social-links flex flex-row justify-center">
+  <div class="social-links flex flex-row justify-center" @click="stopPropagation">
     <div class="social-item ">
       <div class="icon mx-2" v-tooltip="'Buy me a coffee'" @click="openCoffeeLink">
   			<i class="icofont-coffee-alt" />
@@ -7,19 +7,19 @@
     </div>
 
       <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'See what I see'">
+        <div class="icon mx-2" v-tooltip="'See what I see'" @click="openIGLink">
           <i class="icofont-instagram" />
         </div>
       </div>
 
       <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'Follow me on Twitter'">
+        <div class="icon mx-2" v-tooltip="'Follow me on Twitter'" @click="openTwitterLink">
           <i class="icofont-twitter" />
         </div>
       </div>
 
       <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'Check out what I listen to while working'">
+        <div class="icon mx-2" v-tooltip="'Check out what I listen to while working'" @click="openLastFMLink">
           <i class="icofont-brand-lastfm" />
         </div>
       </div>
@@ -31,6 +31,10 @@
 export default {
 
   methods: {
+    stopPropagation(event) {
+      event.stopPropagation();
+    },
+
     openCoffeeLink() {
       window.open('https://www.buymeacoffee.com/jjmu15', '_blank');
     },

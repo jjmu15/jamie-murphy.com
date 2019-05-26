@@ -1,13 +1,13 @@
 <template>
-  <div class="h-screen w-screen panel bg-blue bg-dark" @click="goHome">
+  <div :class="homeClasses" @click="goHome">
 
-    <div class="logo">
-      <router-link class="link" to="/">
+    <div :class="logoClasses">
+      <router-link class="link" to="/" @click="goHome">
         <img src="/img/logo--white.png" alt="Jamie Murphy" />
       </router-link>
     </div>
 
-    <div class="main-nav" @click="hide">
+    <div class="main-nav self-center" @click="hide">
       <a href="/about" class="link" @click="goToAbout">
         About
       </a>
@@ -34,13 +34,14 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import SocialBlock from '../components/SocialBlock.vue';
 
   export default {
 
     data() {
       return {
-        isHidden: false
+
       }
     },
 
@@ -48,45 +49,68 @@
       SocialBlock
     },
 
+    computed: {
+      logoClasses() {
+        return {
+          'logo': true,
+          'logo--is-small': this.home.isHidden
+        }
+      },
+      homeClasses() {
+        return {
+          'h-screen': true,
+          'w-screen': true,
+          'panel': true,
+          'bg-blue': true,
+          'bg-dark': true,
+          'flex': true,
+          'panel--clickable': this.home.isHidden
+        }
+      },
+
+      ...mapState(['home'])
+    },
+
     methods: {
       hide() {
-        this.isHidden = true;
+        this.$store.commit('toggleHomeHidden');
       },
 
       goToAbout(event) {
         event.preventDefault();
         event.stopPropagation();
 
+        this.$store.commit('toggleHomeHidden');
         this.$router.push('/about');
-        this.isHidden = true;
       },
 
       goToContact(event) {
         event.preventDefault();
         event.stopPropagation();
 
+        this.$store.commit('toggleHomeHidden');
         this.$router.push('/contact');
-        this.isHidden = true;
       },
 
       goToPortfolio(event) {
         event.preventDefault();
         event.stopPropagation();
 
+        this.$store.commit('toggleHomeHidden');
         this.$router.push('/portfolio');
-        this.isHidden = true;
       },
 
       goToBlog(event) {
         event.preventDefault();
         event.stopPropagation();
 
+        this.$store.commit('toggleHomeHidden');
         this.$router.push('/blog');
-        this.isHidden = true;
       },
 
       goHome() {
-        if(this.isHidden) {
+        if(this.home.isHidden) {
+          this.$store.commit('toggleHomeHidden');
           this.$router.push('/');
         }
       }
