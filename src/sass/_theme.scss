@@ -1,0 +1,49 @@
+.bg-dark {
+  color: #fff;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 1;
+  padding: 25px 5%;
+  @apply inline-block;
+  @apply align-middle;
+
+  &.panel--level1 {
+    z-index: 10;
+    left: 10%;
+  }
+
+  &.panel--level2 {
+    z-index: 20;
+  }
+
+  &.panel--level3 {
+    z-index: 30;
+  }
+
+  &.panel--level4 {
+    z-index: 40;
+  }
+
+  .panel__content {
+    margin: 0 auto;
+    max-width: 700px;
+    max-height:  70vh;
+    overflow: auto;
+
+    a {
+      padding-bottom: 2px;
+    }
+  }
+}
+
+.back-button {
+  cursor: pointer;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+}

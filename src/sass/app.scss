@@ -1,13 +1,21 @@
 @charset "utf-8";
 
+// vendor
+@import "vendor/icofont";
+
 // generic
 @import "reset";
+@import "variables";
+@import "typography";
 
 // tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import "animations";
+@import "theme";
+
 // elements
-@import "elements/elements.scss";
-@import "components/components.scss";
+@import "elements/elements";
+@import "components/components";

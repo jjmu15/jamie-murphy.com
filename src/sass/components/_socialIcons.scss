@@ -1,0 +1,17 @@
+.social-links {
+  position: absolute;
+  bottom: 2.5%;
+  right: 2.5%;
+
+  .social-item {
+
+    i {
+      cursor: pointer;
+      font-size: 20px;
+
+      @media only screen and (min-width: 760px) {
+        font-size: 40px;
+      }
+    }
+  }
+}

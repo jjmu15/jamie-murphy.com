@@ -1,0 +1,62 @@
+* {
+  font-family: $regularFont !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+.heading,
+.link {
+  font-family: $boldFont !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+h1,
+.h1 {
+  font-weight: bold;
+   @apply text-3xl;
+   @apply mb-5;
+}
+
+h2,
+.h2 {
+  @apply text-xl;
+}
+
+h3,
+.h3 {
+  @apply text-lg;
+}
+
+.lead-paragraph {
+  @appy text-lg;
+}
+
+p {
+  @apply text-base;
+  line-height: 1.4em;
+  margin-bottom: 25px;
+}
+
+a {
+  transition: color 0.3s ease-in, border-color 0.3s ease-in;
+}
+
+.background-dark {
+
+  a {
+    border-bottom: 1px solid #fff;
+
+    &:hover {
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}

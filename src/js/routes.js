@@ -7,6 +7,8 @@ import About from './views/About.vue';
 import Contact from './views/Contact.vue';
 import Portfolio from './portfolio/Landing.vue';
 import PortfolioProject from './portfolio/Project.vue';
+import Blog from './blog/Landing.vue';
+import BlogPost from './blog/Post.vue';
 
 import FourOhFour from './views/FourOhFour.vue';
 
@@ -37,6 +39,7 @@ let router = new VueRouter({
                 component: About
               },
               {
+                // portfolio
                 path: "/portfolio",
                 component: Portfolio,
                 children: [
@@ -49,6 +52,18 @@ let router = new VueRouter({
                     path: "the-content-bible",
                     name: "thecontentbible",
                     component: PortfolioProject
+                  }
+                ]
+              },
+              {
+                // blog
+                path: "/blog",
+                component: Blog,
+                children: [
+                  {
+                    path: "/blog/:slug",
+                    name: "blog-post",
+                    component: BlogPost
                   }
                 ]
               },
