@@ -1,0 +1,23 @@
+.card {
+  @apply p-4;
+  @apply shadow;
+  @apply bg-white;
+  position: relative;
+
+  .link {
+    color: $blue;
+    border-bottom: 1px solid $blue;
+    transition: color 0.3s ease-in, border-color 0.3s ease-in;
+
+    &:hover {
+      color: $black;
+      border-color: $black;
+    }
+  }
+}
+
+.card-link-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

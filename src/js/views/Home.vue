@@ -1,5 +1,5 @@
 <template>
-  <div :class="homeClasses" @click="goHome" v-touch:swipe.right="goBack">
+  <div :class="homeClasses" @click="goHome">
 
     <div :class="logoClasses">
       <router-link class="link" to="/" @click="goHome">
@@ -7,20 +7,22 @@
       </router-link>
     </div>
 
+
     <div class="main-nav self-center" @click="hide">
-      <a href="/about" class="link" @click="goToAbout">
+
+      <a href="/about" class="link font-black" @click="goToAbout">
         About
       </a>
 
-      <a href="/contact" class="link" @click="goToContact">
+      <a href="/contact" class="link font-black" @click="goToContact">
         Contact
       </a>
 
-      <a href="/portfolio" class="link" @click="goToPortfolio">
+      <a href="/portfolio" class="link font-black" @click="goToPortfolio">
         Portfolio
       </a>
 
-      <a href="/blog" class="link" @click="goToBlog">
+      <a href="/blog" class="link font-black" @click="goToBlog">
         Blog
       </a>
     </div>
@@ -84,6 +86,14 @@
         this.$router.push('/about');
       },
 
+      goToMatt(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        this.$store.commit('toggleHomeHidden');
+        this.$router.push('/matt');
+      },
+
       goToContact(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -113,11 +123,6 @@
           this.$store.commit('toggleHomeHidden');
           this.$router.push('/');
         }
-      },
-
-      goBack() {
-        this.$store.commit('toggleHomeHidden');
-        this.$router.go('/');
       }
     }
   };

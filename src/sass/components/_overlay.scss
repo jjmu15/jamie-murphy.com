@@ -1,0 +1,27 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    transition: opacity 0.5s ease-in;
+    background: rgba($black, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+  }
+
+  &.overlay--active {
+    &:before {
+      opacity: 1;
+    }
+  }
+}

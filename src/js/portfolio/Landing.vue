@@ -2,18 +2,22 @@
   <div
   @click="goToLayer1"
   :class="layer1Classes">
-    <back-button v-if="!layer1.isHidden" />
+    <back-button />
 
-    <div class="portfolio-list flex flex-col">
-      <div class="portfolio-list__item flex items-end pb-5" @click="goPDT">
-          Polkadot Tiger
-      </div>
-
-      <div class="portfolio-list__item flex items-end pb-5" @click="goContentBible">
-        TheCONTENTBible
+    <div :class="overlayClasses">
+      <div class="portfolio-list flex flex-col">
+        <div :class="projectItemClasses" v-for="project in projects" @click="goToProject(project, $event)">
+          <div class="project-overlay" :data-color="project.color">
+            &nbsp;
+          </div>
+          <div class="portfolio-list__item__content">
+            <p class="light-text font-sans uppercase tracking-wide mb-2">{{ project.id }} -</p>
+            <h2 class="mb-2 text-xl font-black">{{ project.name }}</h2>
+            <p class="item__category font-sans uppercase tracking-wide">{{ project.role }}</p>
+          </div>
+        </div>
       </div>
     </div>
-
 
     <transition name="level2-animation" enter-active-class="animated slideInRightTwo" leave-active-class="animated slideOutRight">
       <router-view></router-view>
@@ -45,30 +49,81 @@
         }
       },
 
-      ...mapState(['home', 'layer1'])
+      projectItemClasses(test) {
+        return {
+            'portfolio-list__item': true,
+            'flex': true,
+            'flex-col': true,
+            'items-start': true,
+            'justify-end': true,
+            'pb-5': true,
+            "bg-${color}": true,
+        }
+      },
+
+      overlayClasses() {
+        return {
+            'overlay': true,
+            'overlay--active': this.layer1.overlay
+        }
+      },
+
+      ...mapState(['home', 'layer1', 'projects'])
     },
 
     methods: {
       goToLayer1(event) {
-        console.log('yo');
         event.stopPropagation();
 
         if(this.layer1.isHidden) {
           this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
           this.$router.push('/portfolio');
         }
       },
 
+      goToProject(project, event) {
+        event.stopPropagation();
+        
+        if(this.layer1.isHidden) {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push('/portfolio');
+        } else {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push({ name: project.routeName });
+        }
+
+
+      },
+
       goContentBible() {
         event.stopPropagation();
-        this.$store.commit('toggleLayer1');
-        this.$router.push({name: "thecontentbible"});
+
+        if(this.layer1.isHidden) {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push('/portfolio');
+        } else {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push({name: "thecontentbible"});
+        }
       },
 
       goPDT() {
         event.stopPropagation();
-        this.$store.commit('toggleLayer1');
-        this.$router.push({name: "pdt"});
+
+        if(this.layer1.isHidden) {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push('/portfolio');
+        } else {
+          this.$store.commit('toggleLayer1');
+          this.$store.commit('toggleLayer1Overlay');
+          this.$router.push({name: "pdt"});
+        }
       }
     }
 

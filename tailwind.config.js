@@ -11,7 +11,10 @@ module.exports = {
         blue: '#122df3',
         purple: '#5f00d0',
         orange: '#ffbc09',
-        green: '#00f9cd'
+        green: '#00f9cd',
+        lightGrey: '#eeeeee',
+        grey: '#cccccc',
+        black: '#171717',
       },
       margin: {
         '96': '24rem',
