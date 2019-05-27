@@ -110,12 +110,12 @@ router.beforeEach((to, from, next) => {
 });
 
 
-ga('set', 'page', router.currentRoute.path);
-ga('send', 'pageview');
+//ga('set', 'page', router.currentRoute.path);
+//ga('send', 'pageview');
 
 router.afterEach(( to, from ) => {
-  ga('set', 'page', to.path);
-  ga('send', 'pageview');
+  //ga('set', 'page', to.path);
+  //ga('send', 'pageview');
 });
 
 export default router;
