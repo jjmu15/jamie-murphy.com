@@ -9,11 +9,11 @@
 
       <p class="text-xl mb-5">I'd love nothing better than to hear from you. Please feel free to reach out via any of the below methods:</p>
 
-      <p class="mb-4">
+      <!-- <p class="mb-4">
         <span class="icon">
           <i class="icofont-email"></i> hello&#64;jamie-murphy.com
         </span>
-      </p>
+      </p> -->
 
       <p class="mb-4">
         <span class="icon">
