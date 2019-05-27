@@ -53,15 +53,14 @@
         }
       },
 
-      projectItemClasses(test) {
+      projectItemClasses() {
         return {
             'portfolio-list__item': true,
             'flex': true,
             'flex-col': true,
             'items-start': true,
             'justify-end': true,
-            'pb-5': true,
-            "bg-${color}": true,
+            'pb-5': true
         }
       },
 
