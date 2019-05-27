@@ -107,6 +107,15 @@ router.beforeEach((to, from, next) => {
         // else if route does not require auth, just load view
         next()
     }
-})
+});
+
+
+ga('set', 'page', router.currentRoute.path);
+ga('send', 'pageview');
+
+router.afterEach(( to, from ) => {
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+});
 
 export default router;
