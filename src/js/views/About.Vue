@@ -9,11 +9,11 @@
 
       <p class="lead-paragraph text-2xl mb-4">I'm an experienced full-stack developer turned <strong>entrepreneur</strong>, self funding my own products and services built mainly in Laravel and Vuejs. </p>
 
-      <p class="mb-4">I've over 8 years professional experience working for UK based agencies and early spring in 2019, I left my job as Technical Director of a UK agency working with Glenfiddich Whisky and Hendricks Gin to self fund time building products and services.</p>
+      <p class="mb-4 text-lg">I've over 8 years professional experience working for UK based agencies and early spring in 2019, I left my job as Technical Director of a UK agency working with Glenfiddich Whisky and Hendricks Gin to self fund time building products and services.</p>
 
-      <p class="mb-4">I am currently working on <a target="_blank" href="https://www.polkadottiger.com">Polkadot Tiger</a>, an AB testing tool for metadata.</p>
+      <p class="mb-4 text-lg">I am currently working on <a target="_blank" href="https://www.polkadottiger.com">Polkadot Tiger</a>, an A/B testing tool for metadata.</p>
 
-      <p class="mb-4">When I'm not working I love the outdoors and meeting new people. I regularly hike, run & lift heavy weights at <a rel="nofollow" href="https://www.instagram.com/crossfitglasshouse/" target="_blank">Crossfit Glasshouse</a>. I also eat vegan and try to live healthily and cleanly. </p>
+      <p class="mb-4 text-lg">When I'm not working I love the outdoors and meeting new people. I regularly hike, run & lift heavy weights at <a rel="nofollow" href="https://www.instagram.com/crossfitglasshouse/" target="_blank">Crossfit Glasshouse</a>. I also eat vegan and try to live healthily and cleanly. </p>
     </div>
 
     <social-block />
