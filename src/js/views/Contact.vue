@@ -4,7 +4,7 @@
   class="panel panel--level1 bg-light bg-yellow mx-auto h-full flex flex-row justify-center items-center">
     <back-button />
 
-    <div class="panel__content">
+    <div class="panel__content panel__content--no-underline">
       <h1 class="uppercase text-4xl font-black tracking-wide mb-5">Don't be shy, say hello!</h1>
 
       <p class="text-xl mb-5">I'd love nothing better than to hear from you. Please feel free to reach out via any of the below methods:</p>

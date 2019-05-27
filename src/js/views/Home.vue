@@ -1,31 +1,36 @@
 <template>
   <div :class="homeClasses" @click="goHome">
-
     <div :class="logoClasses">
       <router-link class="link" to="/" @click="goHome">
         <img src="/img/logo--white.png" alt="Jamie Murphy" />
       </router-link>
     </div>
 
+    <ul class="main-nav self-center" @click="hide">
+      <li>
+        <a href="/about" class="link font-black" @click="goToAbout">
+          About
+        </a>
+      </li>
 
-    <div class="main-nav self-center" @click="hide">
+      <li>
+        <a href="/contact" tag="li" class="link font-black" @click="goToContact">
+          Contact
+        </a>
+      </li>
 
-      <a href="/about" class="link font-black" @click="goToAbout">
-        About
-      </a>
+      <li>
+        <a href="/portfolio" tag="li" class="link font-black" @click="goToPortfolio">
+          Portfolio
+        </a>
+      </li>
 
-      <a href="/contact" class="link font-black" @click="goToContact">
-        Contact
-      </a>
-
-      <a href="/portfolio" class="link font-black" @click="goToPortfolio">
-        Portfolio
-      </a>
-
-      <a href="/blog" class="link font-black" @click="goToBlog">
-        Blog
-      </a>
-    </div>
+      <li>
+        <a href="/blog" tag="li" class="link font-black" @click="goToBlog">
+          Blog
+        </a>
+      </li>
+    </ul>
 
     <social-block />
 

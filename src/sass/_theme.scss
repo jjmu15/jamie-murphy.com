@@ -53,6 +53,15 @@
 
     a {
       padding-bottom: 2px;
+      border-bottom: 1px solid #fff;
+    }
+
+    &.panel__content--no-underline {
+
+       a {
+         border-bottom: 0;
+         padding-bottom: 0;
+       }
     }
 
   }
