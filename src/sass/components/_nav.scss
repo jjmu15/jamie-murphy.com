@@ -1,13 +1,14 @@
 .main-nav {
+  padding-top: 7.5%;
 
   a {
     display: block;
     color: #fff;
     font-size: 50px;
     line-height: 1.2em;
-    padding-left: 1%;
 
     @media only screen and (min-width: 760px) {
+      padding-left: 8%;
       font-size: 85px;
     }
   }

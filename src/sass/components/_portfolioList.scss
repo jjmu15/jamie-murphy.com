@@ -8,4 +8,29 @@
   position: relative;
   height: 33.333%;
   padding-left: 10%;
+
+  .item__short-desc {
+    max-width: 90%;
+
+    @media only screen and  (min-width: 760px) {
+        max-width: 50%;
+    }
+  }
+
+  .tcm-attrib {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 15;
+
+    @media only screen and (min-width: 760px) {
+      width: 50px;
+      height: 50px;
+      top: auto;
+      bottom: 25px;
+      right: 25px;
+    }
+  }
 }

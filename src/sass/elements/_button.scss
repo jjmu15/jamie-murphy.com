@@ -1,0 +1,12 @@
+.btn {
+  @apply uppercase tracking-wide font-bold rounded;
+  padding: 8px 15px !important;
+}
+
+.btn-blue {
+  background: $blue;
+  @apply text-white;
+}
+.btn-blue:hover {
+  background: $darkBlue;
+}

@@ -52,6 +52,11 @@ let router = new VueRouter({
                     path: "the-content-bible",
                     name: "thecontentbible",
                     component: PortfolioProject
+                  },
+                  {
+                    path: "whisky-me",
+                    name: "whiskyme",
+                    component: PortfolioProject
                   }
                 ]
               },

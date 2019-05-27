@@ -11,19 +11,22 @@ let store = new Vuex.Store({
         isHidden: false,
         overlay: false
       },
+      selectedProject: null,
       projects: [
         {
           id: '01',
           color: 'orange',
           name: 'Polkadot Tiger',
           role: 'Cofounder',
-          technologies: "Laravel, Vuejs",
-          url: 'https://www.polkadottiger.com',
-          logo: '',
-          heroImg: '',
+          technologies: "Laravel, Vuejs, Segment.io, Tailwind CSS",
+          url: 'www.polkadottiger.com',
+          logo: '/img/polkadot-logo-main.png',
+          heroImg: '/img/polkadot-tiger.png',
           wideImg: '',
+          isTCM: false,
           routeName: 'pdt',
-          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.",
+          shortDesc: 'Metadata A/B Testing. Take out the guesswork of creating highly optimized and effective SEO Metadata with Polka Dot Tiger.',
+          description: "Under construction and launching in the very near future. Sign up to the mailing list on the Polkadot Tiger website to get notified when available.",
         },
         {
           id: '02',
@@ -31,12 +34,29 @@ let store = new Vuex.Store({
           name: 'TheCONTENTBible',
           role: 'Developer',
           technologies: "Youtube API, WordPress",
-          url: 'https://www.thecontentbible.com',
-          logo: '',
-          heroImg: '',
+          url: 'www.thecontentbible.com',
+          logo: '/img/the_content_bible_logo.png',
+          isTCM: false,
+          heroImg: '/img/the-content-bible.png',
           wideImg: '',
           routeName: 'thecontentbible',
-          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.",
+          shortDesc: 'Built for TheLADBible to provide a video licensing platform powered by the YouTube API and integrated with WordPress.',
+          description: "TheLADBible needed a video licensing platform to allow potential buyers a quick &amp; effective way to search &amp; filter videos. The YouTube API powers the videos while creating SEO friendly content within WordPress via a custom integration to port over meta data and video tags, categories & descriptions.",
+        },
+        {
+          id: '03',
+          color: 'purple',
+          name: 'Whisky Me',
+          role: 'Architect & Lead Developer',
+          technologies: "Laravel",
+          url: 'www.whisky-me.com',
+          logo: '/img/whisky-me__logo.png',
+          isTCM: true,
+          heroImg: '/img/whisky-me.png',
+          wideImg: '',
+          routeName: 'whiskyme',
+          shortDesc: 'Whisky Me needed a new platform to automate many of the online processes for their monthly Whisky delivery service in the UK.',
+          description: "Whisky me needed an automated online platform to make signups for their customers easier and to provide unique &amp; exclusive content to their subscribers via the members area.",
         }
       ]
 
@@ -52,6 +72,9 @@ let store = new Vuex.Store({
       },
       toggleLayer1Overlay(state) {
         state.layer1.overlay = !state.layer1.overlay;
+      },
+      setSelectedProject(state, project) {
+        state.selectedProject = project;
       }
     },
 

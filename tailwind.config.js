@@ -15,6 +15,7 @@ module.exports = {
         lightGrey: '#eeeeee',
         grey: '#cccccc',
         black: '#171717',
+        yellow: '#FFCC00'
       },
       margin: {
         '96': '24rem',

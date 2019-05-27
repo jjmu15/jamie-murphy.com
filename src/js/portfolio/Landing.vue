@@ -10,10 +10,14 @@
           <div class="project-overlay" :data-color="project.color">
             &nbsp;
           </div>
+
+          <img v-if="project.isTCM" class="tcm-attrib" v-tooltip="'This project was completed whilst I was working as Technical Director for The Constant Media'" src="/img/tcm-logo.jpg" alt="Built while working for The Constant Media" />
+
           <div class="portfolio-list__item__content">
             <p class="light-text font-sans uppercase tracking-wide mb-2">{{ project.id }} -</p>
-            <h2 class="mb-2 text-xl font-black">{{ project.name }}</h2>
-            <p class="item__category font-sans uppercase tracking-wide">{{ project.role }}</p>
+            <h2 class="mb-1 text-xl font-black">{{ project.name }}</h2>
+            <p class="item__category font-sans text-sm font-bold uppercase tracking-wider mb-2">{{ project.role }}</p>
+            <p class="text-lg item__short-desc">{{ project.shortDesc }}</p>
           </div>
         </div>
       </div>
@@ -84,12 +88,13 @@
 
       goToProject(project, event) {
         event.stopPropagation();
-        
+
         if(this.layer1.isHidden) {
           this.$store.commit('toggleLayer1');
           this.$store.commit('toggleLayer1Overlay');
           this.$router.push('/portfolio');
         } else {
+          this.$store.commit('setSelectedProject', project);
           this.$store.commit('toggleLayer1');
           this.$store.commit('toggleLayer1Overlay');
           this.$router.push({ name: project.routeName });
