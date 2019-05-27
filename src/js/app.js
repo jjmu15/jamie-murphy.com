@@ -5,7 +5,6 @@ import store from './store';
 
 new Vue({
     el: '#app',
-
     router,
     store
 });

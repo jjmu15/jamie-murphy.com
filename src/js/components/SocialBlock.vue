@@ -6,23 +6,23 @@
   		</div>
     </div>
 
-      <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'See what I see'" @click="openIGLink">
-          <i class="icofont-instagram" />
-        </div>
+    <div class="social-item">
+      <div class="icon mx-2" v-tooltip="'See what I see'" @click="openIGLink">
+        <i class="icofont-instagram" />
       </div>
+    </div>
 
-      <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'Follow me on Twitter'" @click="openTwitterLink">
-          <i class="icofont-twitter" />
-        </div>
+    <div class="social-item">
+      <div class="icon mx-2" v-tooltip="'Follow me on Twitter'" @click="openTwitterLink">
+        <i class="icofont-twitter" />
       </div>
+    </div>
 
-      <div class="social-item">
-        <div class="icon mx-2" v-tooltip="'Check out what I listen to while working'" @click="openLastFMLink">
-          <i class="icofont-brand-lastfm" />
-        </div>
+    <div class="social-item">
+      <div class="icon mx-2" v-tooltip="'Check out what I listen to while working'" @click="openLastFMLink">
+        <i class="icofont-brand-lastfm" />
       </div>
+    </div>
   </div>
 </template>
 
