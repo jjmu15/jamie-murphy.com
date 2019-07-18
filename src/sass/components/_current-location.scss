@@ -4,10 +4,4 @@
   left: 25px;
   text-align: left;
   cursor: pointer;
-
-  @media only screen and (min-width: 760px) {
-    left: 50%;
-    transform: perspective(1px) translateX(-50%);
-    text-align: center;
-  }
 }
