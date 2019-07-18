@@ -1,0 +1,8 @@
+.current-location {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: perspective(1px) translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}

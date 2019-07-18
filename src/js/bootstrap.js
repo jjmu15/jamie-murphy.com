@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';
 import VTooltip from 'v-tooltip';
+import VueScrollTo from 'vue-scrollto';
+import VueInstagram from 'vue-instagram';
 
 
 window.Vue = Vue;
@@ -12,6 +14,8 @@ window.axios = axios;
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VTooltip);
+Vue.use(VueScrollTo);
+Vue.use(VueInstagram);
 Vue.directive('tooltip', VTooltip.VTooltip);
 Vue.directive('close-popover', VTooltip.VClosePopover);
 Vue.component('v-popover', VTooltip.VPopover);

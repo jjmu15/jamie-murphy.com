@@ -10,6 +10,9 @@ import PortfolioProject from './portfolio/Project.vue';
 import Blog from './blog/Landing.vue';
 import BlogPost from './blog/Post.vue';
 
+// locations
+import Budapest from './locations/Budapest.vue';
+
 import FourOhFour from './views/FourOhFour.vue';
 
 
@@ -75,6 +78,10 @@ let router = new VueRouter({
               {
                 path: "/contact",
                 component: Contact
+              },
+              {
+                path: '/budapest',
+                component: Budapest
               }
             ]
         },

@@ -20,6 +20,9 @@
 @import "elements/elements";
 @import "components/components";
 
+// locations
+@import "locations/locations";;
+
 #app {
   position: relative;
   z-index: 1;

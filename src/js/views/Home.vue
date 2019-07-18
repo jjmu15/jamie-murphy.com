@@ -56,6 +56,11 @@
       </ul>
     </div>
 
+    <div class="current-location" @click="goToBudapest">
+      <p class="font-black uppercase text-sm heading">Current Location</p>
+      <i class="icofont-location-pin"></i> <span class="heading text-xs padded-underline">Budapest</span>
+    </div>
+
     <social-block />
 
     <transition name="level1-animation" enter-active-class="animated slideInRightOne" leave-active-class="animated slideOutRight">
@@ -133,14 +138,6 @@
         this.$router.push('/about');
       },
 
-      goToMatt(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/matt');
-      },
-
       goToContact(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -163,6 +160,14 @@
 
         this.$store.commit('toggleHomeHidden');
         this.$router.push('/blog');
+      },
+
+      goToBudapest(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        this.$store.commit('toggleHomeHidden');
+        this.$router.push('/budapest');
       },
 
       goHome() {

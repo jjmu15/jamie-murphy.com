@@ -94,6 +94,12 @@
   }
 }
 
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+
 @keyframes flash {
   from,
   50%,
@@ -3448,7 +3454,7 @@
     opacity: 1;
   }
 }
- 
+
 @keyframes slideInRightTwo {
   from {
     -webkit-transform: translate3d(110%, 0, 0);
