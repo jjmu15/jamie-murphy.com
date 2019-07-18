@@ -19,3 +19,8 @@
 // elements
 @import "elements/elements";
 @import "components/components";
+
+#app {
+  position: relative;
+  z-index: 1;
+}

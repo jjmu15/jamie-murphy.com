@@ -12,7 +12,7 @@ h7,
 .heading,
 .link {
   font-family: $boldFont !important;
-  font-weight: bold; 
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
@@ -59,4 +59,10 @@ a {
       border-bottom: 1px solid #ddd;
     }
   }
+}
+
+.padded-underline {
+  text-decoration: none !important;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #fff;
 }

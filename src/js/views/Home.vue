@@ -13,13 +13,13 @@
     </div>
 
     <div class="intro">
-      <h1 class="font-black heading">Bespoke web application developer using Laravel & Vuejs</h1>
+      <h1 class="font-black heading">Bespoke web application developer</h1>
       <p class="strapline">
         I'm proud to have helped
-        LADBible,
-        Glenfiddich Whisky,
-        Sailor Jerry Clothing,
-        Aerstone Whisky
+        <span class="padded-underline">LADBible</span>,
+        <span class="padded-underline">Glenfiddich Whisky</span>,
+        <span class="padded-underline">Sailor Jerry Clothing</span>,
+        <span class="padded-underline">Aerstone Whisky</span>
         & many more amazing clients to achieve their online goals.
 
         <br /><br />
@@ -61,6 +61,7 @@
     <transition name="level1-animation" enter-active-class="animated slideInRightOne" leave-active-class="animated slideOutRight">
       <router-view></router-view>
     </transition>
+
   </div>
 </template>
 
