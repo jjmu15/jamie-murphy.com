@@ -6,31 +6,55 @@
       </router-link>
     </div>
 
-    <ul class="main-nav self-center" @click="hide">
-      <li>
-        <a href="/about" class="link font-black" @click="goToAbout">
-          About
-        </a>
-      </li>
+    <div class="menu-icon">
+      <i :class="menuIconClasses"
+        @click="toggleMenu"
+      ></i>
+    </div>
 
-      <li>
-        <a href="/contact" tag="li" class="link font-black" @click="goToContact">
-          Contact
-        </a>
-      </li>
+    <div class="intro">
+      <h1 class="font-black heading">Bespoke web application developer using Laravel & Vuejs</h1>
+      <p class="strapline">
+        I'm proud to have worked with
+        LADBible,
+        Glenfiddich Whisky,
+        Sailor Jerry Clothing,
+        Aerstone Whisky
+        & many more amazing clients.
 
-      <li>
-        <a href="/portfolio" tag="li" class="link font-black" @click="goToPortfolio">
-          Portfolio
-        </a>
-      </li>
+        <br /><br />
 
-      <li>
-        <a href="/blog" tag="li" class="link font-black" @click="goToBlog">
-          Blog
-        </a>
-      </li>
-    </ul>
+        Founder of <a target="_blank" href="https://www.polkadottiger.com">Polkadot Tiger</a> and <a target="_blank" href="https://www.techsource.hu">Techsource</a>.
+      </p>
+    </div>
+
+    <div :class="menuClasses" @click="hide">
+      <ul>
+        <li>
+          <a href="/about" class="link font-black" @click="goToAbout">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="/contact" tag="li" class="link font-black" @click="goToContact">
+            Contact
+          </a>
+        </li>
+
+        <!-- <li>
+          <a href="/portfolio" tag="li" class="link font-black" @click="goToPortfolio">
+            Portfolio
+          </a>
+        </li> -->
+
+        <li>
+          <a href="/blog" tag="li" class="link font-black" @click="goToBlog">
+            Blog
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <social-block />
 
@@ -48,7 +72,7 @@
 
     data() {
       return {
-
+        menuOpen: false
       }
     },
 
@@ -61,6 +85,19 @@
         return {
           'logo': true,
           'logo--is-small': this.home.isHidden
+        }
+      },
+      menuClasses() {
+        return {
+          'main-nav': true,
+          'self-center': true,
+          'main-nav--open': this.menuOpen
+        }
+      },
+      menuIconClasses() {
+        return {
+          'icofont-navigation-menu': !this.menuOpen,
+          'icofont-ui-close': this.menuOpen
         }
       },
       homeClasses() {
@@ -81,6 +118,10 @@
     methods: {
       hide() {
         this.$store.commit('toggleHomeHidden');
+      },
+
+      toggleMenu() {
+        this.menuOpen = !this.menuOpen;
       },
 
       goToAbout(event) {
