@@ -15,12 +15,12 @@
     <div class="intro">
       <h1 class="font-black heading">Bespoke web application developer using Laravel & Vuejs</h1>
       <p class="strapline">
-        I'm proud to have worked with
+        I'm proud to have helped
         LADBible,
         Glenfiddich Whisky,
         Sailor Jerry Clothing,
         Aerstone Whisky
-        & many more amazing clients.
+        & many more amazing clients to achieve their online goals.
 
         <br /><br />
 
