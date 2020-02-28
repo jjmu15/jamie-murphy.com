@@ -1,19 +1,19 @@
-import VueRouter from 'vue-router';
-import store from './store';
+import VueRouter from 'vue-router'
+import store from './store'
 
 // views
-import Home from './views/Home.vue';
-import About from './views/About.vue';
-import Contact from './views/Contact.vue';
-import Portfolio from './portfolio/Landing.vue';
-import PortfolioProject from './portfolio/Project.vue';
-import Blog from './blog/Landing.vue';
-import BlogPost from './blog/Post.vue';
+import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Contact from './views/Contact.vue'
+import Portfolio from './portfolio/Landing.vue'
+import PortfolioProject from './portfolio/Project.vue'
+import Blog from './blog/Landing.vue'
+import BlogPost from './blog/Post.vue'
 
 // locations
-import Budapest from './locations/Budapest.vue';
+import Budapest from './locations/Budapest.vue'
 
-import FourOhFour from './views/FourOhFour.vue';
+import FourOhFour from './views/FourOhFour.vue'
 
 
 // create router instance
@@ -86,7 +86,6 @@ let router = new VueRouter({
             ]
         },
 
-
         {
             path: '*',
             name: "404",
@@ -99,30 +98,30 @@ let router = new VueRouter({
 router.beforeEach((to, from, next) => {
     // if route has been specified to require auth
     if(to.matched.some(record => record.meta.requiresAuth)) {
-        const now = new Date().toLocaleString();
+        const now = new Date().toLocaleString()
 
         // if token is set & not yet expired
         if(store.state.token.value !== null && now < store.state.token.expiryDate) {
             // go to next url
-            next();
+            next()
             return
         }
 
         // if token not set or is expired, go to login
-        next('/login');
+        next('/login')
     } else {
         // else if route does not require auth, just load view
         next()
     }
-});
+})
 
 
 //ga('set', 'page', router.currentRoute.path);
-//ga('send', 'pageview');
+//ga('send', 'pageview')
 
 router.afterEach(( to, from ) => {
-  //ga('set', 'page', to.path);
-  //ga('send', 'pageview');
-});
+  //ga('set', 'page', to.path)
+  //ga('send', 'pageview')
+})
 
-export default router;
+export default router

@@ -12,21 +12,7 @@
       ></i>
     </div>
 
-    <div class="intro">
-      <h1 class="font-black heading">Bespoke web application developer</h1>
-      <p class="strapline">
-        I'm proud to have helped
-        <span class="padded-underline">LADBible</span>,
-        <span class="padded-underline">Glenfiddich Whisky</span>,
-        <span class="padded-underline">Sailor Jerry Clothing</span>,
-        <span class="padded-underline">Aerstone Whisky</span>
-        & many more amazing clients to achieve their online goals.
-
-        <br /><br />
-
-        Founder of <a target="_blank" href="https://www.polkadottiger.com">Polkadot Tiger</a> and <a target="_blank" href="https://www.techsource.hu">Techsource</a>.
-      </p>
-    </div>
+    <div class="intro" v-html="home.intro"></div>
 
     <div :class="menuClasses" @click="hide">
       <ul>
@@ -71,14 +57,14 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
-  import SocialBlock from '../components/SocialBlock.vue';
+  import { mapState } from 'vuex'
+  import SocialBlock from '../components/SocialBlock.vue'
 
   export default {
 
     data() {
       return {
-        menuOpen: false
+        menuOpen: false,
       }
     },
 
@@ -123,59 +109,71 @@
 
     methods: {
       hide() {
-        this.$store.commit('toggleHomeHidden');
+        this.$store.commit('toggleHomeHidden')
       },
 
       toggleMenu() {
-        this.menuOpen = !this.menuOpen;
+        this.menuOpen = !this.menuOpen
       },
 
       goToAbout(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/about');
+        this.$store.commit('toggleHomeHidden')
+        this.$router.push('/about')
       },
 
       goToContact(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/contact');
+        this.$store.commit('toggleHomeHidden')
+        this.$router.push('/contact')
       },
 
       goToPortfolio(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/portfolio');
+        this.$store.commit('toggleHomeHidden')
+        this.$router.push('/portfolio')
       },
 
       goToBlog(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/blog');
+        this.$store.commit('toggleHomeHidden')
+        this.$router.push('/blog')
       },
 
       goToBudapest(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden');
-        this.$router.push('/budapest');
+        this.$store.commit('toggleHomeHidden')
+        this.$router.push('/budapest')
       },
 
       goHome() {
         if(this.home.isHidden) {
-          this.$store.commit('toggleHomeHidden');
-          this.$router.push('/');
+          this.$store.commit('toggleHomeHidden')
+          this.$router.push('/')
         }
       }
+    },
+
+    mounted() {
+      if(!this.home.intro) {
+        axios.get('https://cms.jamie-murphy.com/wp-json/wp/v2/pages/25')
+        .then(response => {
+          this.$store.commit("setHomepageIntro", response.data.content.rendered)
+        })
+        .catch(error => {
+          //console.log(error)
+        })
+      }
     }
-  };
+  }
 </script>

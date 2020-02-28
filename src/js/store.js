@@ -1,11 +1,19 @@
-import Vuex from 'vuex';
+import Vuex from 'vuex'
+import Cookies from 'vue-cookies'
 
 
 let store = new Vuex.Store({
 
     state: {
       home: {
-        isHidden: false
+        isHidden: false,
+        intro: JSON.parse(Cookies.get('jm_home_intro')) || null,
+      },
+      about: {
+        content: JSON.parse(Cookies.get('jm_about_content')) || null
+      },
+      contact: {
+        content: JSON.parse(Cookies.get('jm_contact_content')) || null
       },
       layer1: {
         isHidden: false,
@@ -75,6 +83,18 @@ let store = new Vuex.Store({
       },
       setSelectedProject(state, project) {
         state.selectedProject = project;
+      },
+      setHomepageIntro(state, intro) {
+        Cookies.set('jm_home_intro', JSON.stringify(intro));
+        state.home.intro = intro;
+      },
+      setAboutContent(state, content) {
+        Cookies.get('jm_about_content', JSON.stringify(content));
+        state.about.content = content;
+      },
+      setContactContent(state, content) {
+        Cookies.get('jm_contact_content', JSON.stringify(content));
+        state.contact.content = content;
       }
     },
 
@@ -86,6 +106,6 @@ let store = new Vuex.Store({
     actions: {
 
     }
-});
+})
 
-export default store;
+export default store
