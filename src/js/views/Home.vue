@@ -35,7 +35,7 @@
         </li> -->
 
         <li>
-          <a href="/blog" tag="li" class="link font-black" @click="goToBlog">
+          <a href="https://makingjamie.com" tag="li" class="link font-black" @click="goToBlog">
             Blog
           </a>
         </li>
@@ -144,8 +144,7 @@
         event.preventDefault()
         event.stopPropagation()
 
-        this.$store.commit('toggleHomeHidden')
-        this.$router.push('/blog')
+        window.location = 'https://makingjamie.com'
       },
 
       goToBudapest(event) {
