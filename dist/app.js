@@ -2622,8 +2622,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     goToBlog: function goToBlog(event) {
       event.preventDefault();
       event.stopPropagation();
-      this.$store.commit('toggleHomeHidden');
-      this.$router.push('/blog');
+      window.location = 'https://makingjamie.com';
     },
     goToBudapest: function goToBudapest(event) {
       event.preventDefault();
@@ -11146,7 +11145,7 @@ var render = function() {
               "a",
               {
                 staticClass: "link font-black",
-                attrs: { href: "/blog", tag: "li" },
+                attrs: { href: "https://makingjamie.com", tag: "li" },
                 on: { click: _vm.goToBlog }
               },
               [_vm._v("\n          Blog\n        ")]
