@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 import store from './store'
 
-// views
+// views 
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Contact from './views/Contact.vue'
